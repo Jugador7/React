@@ -25,12 +25,38 @@ Tienen eventos que le permiten al componente manejar eventos DOM y de interacci�
 Los estados le permiten al componente mantenerse stateful. 
 
 En React los componentes son:
-- Funcionales
+- Funcionales (utiles cuando el componente tiene propiedades pero el ciclo de vida no debe ser gestionado)
   Se crean creando funciones de JS. Reciben propiedades y devuleven JSX. No tienen estados o metodos de ciclo de vida pero se les pueden añadir implementando React Hooks. Se usan para mostrar información que es fácil de
   leer, debuggear y probar. 
   Es stateless, es una función plana de JS
 
   const Democomponent = () => {return <h1> Welcome Message! </h1>;}
+
+  Las propiedades son definidas por el usuario y se pasan como parametros en la función
+
+  function App(props){
+    const compStyle = {
+      color : props.color,
+      fontsize: props.size + "px"
+    };
+
+    return {
+      <div>
+        <span style = {compStyle}> I am sentence </span>
+      </div>
+    };
+  }
+
+  ReactDOM.render(
+  <React.StrictMode>
+    <App color = "blue" size ="25" />
+  </ReactStrictMode>
+  document.getElementById('root')
+  )
+
+  EventHandler
+  - El más común esa el on Click
+  
   
 - Clase
   Se puede pasar datos de una clase a otra
@@ -44,6 +70,22 @@ En React los componentes son:
      return <h1> Welcome Message!</h1> 
     }
   }
+
+  Heredan de React.Component y necesitan hacer override el método render. 
+  Pueden tener estados y propiedades
+
+  import React from 'react';
+  class App extends React.Component {
+    constructor(props){
+      super(props)
+    }
+
+    render(){
+     return <button onClick = {this.props.clickEvent}> Click Me!</button> 
+    }
+  }
+
+  export default App;
   
 - Puros compoenentes de React
   Más simples y rápidos. Usados para proveer optimizaciones. 
