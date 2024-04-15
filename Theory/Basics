@@ -1,0 +1,2 @@
+Comando para crear una app fácil:
+npx create-react-app todoapp
