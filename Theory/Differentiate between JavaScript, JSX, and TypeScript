@@ -31,3 +31,8 @@ There is a learning curve
 Compilation takes a little longer than using Babel with JSX
 
 Third-party libraries could be missing Type definitions, though this is rare because TypeScript has grown very popular
+
+
+For ES6, you can use tools like Gatsby, Apache OpenWhisk, and ESBuild.
+JSX collaborates with standard technologies such as JavaScript, TypeScript, and CSS blocks.
+TypeScript is well-supported by tools like Gatsby, WebStorm, and TSLint.
