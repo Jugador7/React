@@ -1,0 +1,11 @@
+1. Montjaje: Creación del componente
+Se llaman cuatro métodos en este orden:
+- construcor()
+- getDerivedStateFromProps
+- render()
+- componentDidMount()
+
+
+
+2. Actualización: Cuando el componente cambia
+3. Desmontaje: Cuando el componente es removido
