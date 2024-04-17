@@ -1,4 +1,9 @@
+0. Inicialización
+
+
+
 1. Montjaje: Creación del componente
+Constructor, render, React actualiza el DOM y refs, ComponentDidMount
 Se llaman cuatro métodos en este orden:
 - construcor()
 - getDerivedStateFromProps()
@@ -28,6 +33,7 @@ class App extends React.component {
 
 
 2. Actualización: Cuando el componente cambia
+New props, setState, forceUpdate(), render, React actualiza DOM y referencias, componentDidUpdate
 Se llaman cinco métodos en este orden
 - getDerivedStateFromProps()
 - shouldComponentUpdate() // has que este componente devuelva falso si no quieres que se reproduzcan los cambios en el estado
