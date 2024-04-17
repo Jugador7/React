@@ -1,4 +1,5 @@
 HTTP: GET,POST,UPDATE,DELETE
+Para hacer que la llamada sea asíncrona puedes usar promesas. 
 
 Promise server call
 
