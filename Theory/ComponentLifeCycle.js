@@ -35,36 +35,72 @@ Se llaman cinco métodos en este orden
 - getSnapshotBeforeUpdate() //guarda una foto del componente justo antes de actualizarlo
 - componentDidUpdate()
 
+import React from 'react';
+
 class App extends React.component {
-  state = {counter : "0");
-  incrementCounter = ()=> this.setState({counter:parseInt(this.state.counter)+1});
-
-  shouldComponentUpdate(){
-    console.log("Inside shouldComponentUpdate")
-    return true;
-  }
-
-  getSnapshotBeforeUpdate(prevProps, prevState){
-    console.log("Inside getSnapshotBeforeUpdate");
-    console.log("Prev counter is " + prevState.counter);
-    console.log("New counter is " + this.state.counter);
-    return prevState;
-  }
+    state = {counter : "0"};
+    incrementCounter = ()=> this.setState({counter:parseInt(this.state.counter)+1});
   
-  componenDidUpdate(){
-    console.log("Inside component DidUpdate")
-  }
-
-  render(){
-    console.log("Inside render method")
-    return{
-      <div>
-        <button onClick={this.incrementCounter}>Click Me!</button>
-        {this.state.counter}    
-      </div>
+    shouldComponentUpdate(){
+      console.log("Inside shouldComponentUpdate")
+      return true;
+    }
+  
+    getSnapshotBeforeUpdate(prevProps, prevState){
+      console.log("Inside getSnapshotBeforeUpdate");
+      console.log("Prev counter is " + prevState.counter);
+      console.log("New counter is " + this.state.counter);
+      return prevState;
+    }
+    
+    componenDidUpdate(){
+      console.log("Inside component DidUpdate")
+    }
+  
+    render(){
+      console.log("Inside render method")
+      return(
+        <div>
+          <button onClick={this.incrementCounter}>
+          Click Me!
+          </button>
+          {this.state.counter}    
+        </div>
+      )
     }
   }
-}
 
 
 3. Desmontaje: Cuando el componente es removido
+se llama un solo metodo
+- ComponentWillUnmount()
+
+import React from 'react';
+
+class AppInner extends React.component {
+    componentWillUnmount(){
+      console.log("This component will unmount")
+    }
+    render(){
+      return <div>Inner component</div>
+    }
+}
+
+class App extends React.component {
+    state = {innerComponent : <AppInner/>}
+             
+    componenDidMount(){
+      setTimeout{()=>{
+        this.setState({innerComponent:<div>unmounted</div>})
+      },5000}
+    }
+  
+    render(){
+      console.log("Inside render method")
+      return(
+        <div>
+        {this.state.innerComponent}
+        </div>
+      )
+    }
+  }
