@@ -104,3 +104,5 @@ class App extends React.component {
       )
     }
   }
+
+Puedes pasar datos de paderes a hijos usando propiedades, de hijos a padres usando callbacks y entre hermanos. 
