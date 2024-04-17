@@ -2,3 +2,37 @@ Fases
 1. Arrange
 2. Act
 3. Assert
+
+Herramientas:
+
+Velocidad vs. Entorno
+- Unas pueden ser veloces pero poco asertivas
+- Otras pueden usar el entorno real del navegador pero la iteración es lenta. 
+
+Qué se mockea
+- Unidades (botones)
+- Integración (formularios)
+
+Librerías de testing:
+-Mocha: Test runner, 
+-Chai: Assertio Library, 
+-Sinon: Spies, stubs, mocks
+-Enzyme: Se usa para reproducir los componentes de React
+
+-Jest: Combina Mocha, Chai y Sinon, se puede combianr con Enzyme y Jest.
+Es muy veloz porque mockea modulos y timers
+Tiene una herramienta de línea de comando. 
+Mockea funciones
+Ofrece Snapshots
+Depende de React cuando se usa npx-create-react-app
+
+
+-React Testing Library
+Usa funciones ligeras de utildiad en cima de react-dom 
+Facilita consultas al DOM, encontrar elementos de formularios, enlaces y botonoes. 
+Encuentra elementos en los que el texto no se entiende
+Permite a aplicaciones ser más accesibles
+Es un reemplazo de Enzyme
+Permite probar el código como un usuario lo haría. 
+Reescribir pruenas aumentan tu productividad.
+
