@@ -22,13 +22,22 @@ render() {
 }
 
 //Props	Props is short for properties and it is used to pass data between React components.	
-class TestComponentextendsReact.component{
-render() {
-return
-Hi {this.props.name}}
-//passing the props as examples to the test component
-TestComponentname=‘John’
-TestComponentname=‘Jill’
+ 
+class TestComponent extends React.Component{
+
+  render() {
+    return (
+      <div>
+        Hi {this.props.name}
+      </div>
+    );
+  }
+}
+ 
+<TestComponent name="John" />
+<TestComponent name="Jill" />
+
+}
 
 //mounting	When a component instance is created and added to the DOM, these methods are invoked in the following order:
 constructor(),getDerivedStateFromProps(),
