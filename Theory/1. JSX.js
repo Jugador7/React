@@ -3,10 +3,11 @@ Qué es JSX?
 - Es una manera más fácil de crear componentes en React. 
 - Produce elementos de React. 
 
-La sintáxis es de XML (parecida a HTML) para extender el ECMAScript. Permite que el texto XML o el similar al HTML coexista con el código de React o JS. Se usa por preporcesadores o compiladores para transformar el HTML en objetos de JS. 
+La sintáxis es de XML (parecida a HTML) para extender el ECMAScript. 
+Permite que el texto XML o el similar al HTML coexista con el código de React o JS. Se usa por preporcesadores o compiladores para transformar el HTML en objetos de JS. 
 
 Ejemplo de JSX:
-const el1 = <h1> Este es un snippte de ejemplo de JSX </h1>
+const el1 = <h1> Este es un snippet de ejemplo de JSX </h1>
 
 Los navegadores no entienden JSX así que hay que usar Babel para compilar.
 
