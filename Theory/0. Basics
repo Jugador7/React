@@ -2,9 +2,10 @@ React es una librería flexible y eficiente de JS para construir interfaces de u
 
 React utiliza un lenguaje de markup especuial llamado JSX
 
-Una aplicación en Reract es un árbol de componentes y una extensión del DOM. 
+Una aplicación en React es un árbol de componentes y una extensión del DOM. 
 
 Comando para crear una app fácil:
+
 npx create-react-app todoapp
 
 npm start inicia mi aplicación en el puerto 3000 por lo general. 
