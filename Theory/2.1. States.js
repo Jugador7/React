@@ -38,6 +38,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<TextComponent />)
 
 Props
+
 Se usan para pasar datos entre componentes de React. 
 Solo se pueden leer.
 Son objetos que guardan los atributos de un tag y funcionan como HTML. 
@@ -52,7 +53,6 @@ class TestComponent extends React.component{
   }
 //pasamos propiedades al componente
 <TestComponent name= "John"/>
-
 }
 
 Diferencias:
@@ -67,7 +67,7 @@ States:
 
 Props:
 - Pueden reusar el componente al darle la habilidad de recibir datos como input desde el componente padre. 
-- Da la habilidad de recibir datos deñ componente padre en forma de props. 
+- Da la habilidad de recibir datos del componente padre en forma de props. 
 - Los componentes reciben datos desde afuera con el prop
 - Es usado para pasar datos
 - Los datos solo se pueden leer y no pueden ser modificados por el componente que la recibe desde afuera. 
