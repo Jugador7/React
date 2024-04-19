@@ -43,7 +43,7 @@ Se llaman cinco métodos en este orden
 
 import React from 'react';
 
-class App extends React.component {
+class App extends React.Component {
     state = {counter : "0"};
     incrementCounter = ()=> this.setState({counter:parseInt(this.state.counter)+1});
   
@@ -59,7 +59,7 @@ class App extends React.component {
       return prevState;
     }
     
-    componenDidUpdate(){
+    componentDidUpdate(){
       console.log("Inside component DidUpdate")
     }
   
@@ -75,6 +75,8 @@ class App extends React.component {
       )
     }
   }
+
+  export default App;
 
 
 3. Desmontaje: Cuando el componente es removido
