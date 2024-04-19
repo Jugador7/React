@@ -1,24 +1,30 @@
 Package/Method	Description	Code Example
-let and const	let allows you to restrict the scope of variables within the block where they are declared. const allows you to declare constants whose values cannot be changed.	
+let and const	
+let allows you to restrict the scope of variables within the block where they are declared. 
+const allows you to declare constants whose values cannot be changed.	
+    
 {
     let a = 10
     console.log(a)
     a = 15
     console.log(a)
 }
-console.log(a)
-const num = 5
-console.log(num)
-num = 8
-console.log(num)
-
+{
+    const num = 5
+    console.log(num)
+    num = 8
+    console.log(num)
+}
+    
 Arrow function	Arrow functions allow you to write shorter function syntax.	
-hello = () =>
+
+hello = ()=>
 {
     return "Hello World!";
 }
 
-Promises	The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.	
+Promises	
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.	
   
 let promiseArgument = (resolve, reject) =>
     setTimeout (() => {
@@ -30,9 +36,9 @@ let promiseArgument = (resolve, reject) =>
     }
     ,2000)
     }
-    let myPromise = new Promise(promiseArgument);
-    
 
+let myPromise = new Promise(promiseArgument);
+    
 class	Class is a template or blueprint for creating object.	
 
 function car(name,year)
@@ -41,6 +47,7 @@ function car(name,year)
     this.year = year
     return this;
 }
+
 let car = car("Ford", 2014)
 console.log(car)
 console.log(car.name)
