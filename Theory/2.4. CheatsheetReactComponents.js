@@ -23,89 +23,121 @@ render() {
 
 //Props	Props is short for properties and it is used to pass data between React components.	
  
-class TestComponent extends React.Component{
 
-  render() {
-    return (
-      <div>
+import React from 'react';
+
+
+class App extends React.Component {
+    render() {
+      return (
+        <div>
         Hi {this.props.name}
       </div>
-    );
-  }
+      );
+    }
 }
- 
-<TestComponent name="John" />
-<TestComponent name="Jill" />
+export default App;
 
-}
+const root = createRoot(document.getElementById('root'));
+root.render(
+    <App name="John" />
+);
 
 //mounting	When a component instance is created and added to the DOM, these methods are invoked in the following order:
 constructor(),getDerivedStateFromProps(),
 render(),componentDidMount().	
-class Header extends React.Component {
-constructor(props) {
-super(props);
-console.log("Inside the constructor")
-}
-componentDidMount =()=> {
-console.log("Inside component did mount")
-}
-render() {
-console.log("Inside render method")
-return (
-The component is rendered
-)
-}
-}
-export default App
+ 
+import React from "react";
 
-//updating	When a component is updated,five methods are called in the same order: getDerivedStateFromProps(),shouldComponentUpdate(),render(),
+class App extends React.Component {
+  constructor(props) {
+   super(props);
+   console.log("Inside the constructor")
+  }
+   
+  componentDidMount = ()=> {
+  console.log("Inside component did mount")
+  }
+  
+  render() {
+   console.log("Inside render method")
+   return (
+    "The component is rendered"
+   )
+  }
+  
+  }
+  export default App
+
+//Updating	When a component is updated, five methods are called in the same order: getDerivedStateFromProps(),shouldComponentUpdate(),render(),
 getSnapshotBeforeUpdate(),componentDidUpdate()	
- class App extends React.Component{
-state = {counter: "0"};
-incrementCounter = () => this.setState({counter:parseInt(this.state.counter)+1})
-shouldComponentUpdate(){
- console.log("Inside shouldComponent update")
-  return true;
+
+import React from "react";
+
+class App extends React.Component{
+  state = {
+    counter: "0"
+  };
+  incrementCounter = ()=> this.setState({counter:parseInt(this.state.counter)+1})
+    
+  shouldComponentUpdate(){
+    console.log("Inside shouldComponent update")
+    return true;
+  }
+    
+  getSnapshotBeforeUpdate(prevProps,prevState){
+    console.log("Inside getSnapshotBeforeUpdate")
+    console.log("Prev counter is" +prevState.counter);
+    console.log("New counter is" + this.state.counter);
+    return prevState
+  }
+  
+  componentDidUpdate(){
+    console.log("Inside componentDidUpdate")
+  }
+  render(){
+    console.log("Inside render")
+    return (
+    <div><button onClick={this.incrementCounter}>Click Me!</button>
+    {this.state.counter}
+    </div>
+    )
+  }
 }
-getSnapshotBeforeUpdate(prevProps,prevState){
-console.log("Inside getSnapshotBeforeUpdate")
-console.log("Prev counter is" +prevState.counter);
-console.log("New counter is" +this.state.counter);
-return prevState
-}
-componentDidUpdate(){
-  console.log("Inside componentDidUpdate")
-}
-render(){
-  console.log("Inside render")
-  return(<button onClick={this.incrementCounter}>Click Me!</button>{this.state.counter}
-)
-}}
 export default App;
 
   
 //Unmounting	When a component is removed or unmounted from the DOM, the componentWillUnmount() method enables us to run React code.	
- import React from 'react';
-class ComponentOne extends React.Component {
-componentWillUnmount() {
-console.log('The component is going to be unmounted');
+import React from 'react';
+
+class AppWrapper extends React.Component {
+ componentWillUnmount() {
+ console.log('The component is going to be unmounted');
+ }
+ 
+ render() {
+  return 'Inner component';
+ }
 }
-render() {
-return Inner component;
-}
-}
+
 class App extends React.Component {
-state = { innerComponent:<AppInner/>};
+state = {innerComponent:<AppWrapper/>};
+
 componentDidMount() {
-setTimerout(()=>{
-this.setState({ innerComponent:unmounted});
+setTimeout(()=>{
+this.setState({ innerComponent:'unmounted'});
 },5000)
 }
+
 render() {
 console.log("Inside render")
 return (
-{this.state.innerComponent});
+  <div>
+    {this.state.innerComponent}
+  </div>
+);
 }
+
 }
+
 export default App;
