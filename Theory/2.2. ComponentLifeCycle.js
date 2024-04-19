@@ -82,35 +82,44 @@ class App extends React.Component {
 3. Desmontaje: Cuando el componente es removido
 se llama un solo metodo
 - ComponentWillUnmount()
-
 import React from 'react';
 
-class AppInner extends React.component {
-    componentWillUnmount(){
-      console.log("This component will unmount")
-    }
-    render(){
-      return <div>Inner component</div>
-    }
+class AppInner extends React.Component {
+  componentWillUnmount() {
+    console.log("This component will unmount")
+  }
+
+  render() {
+    return <div>Inner component</div>
+  }
 }
 
-class App extends React.component {
-    state = {innerComponent : <AppInner/>}
-             
-    componenDidMount(){
-      setTimeout{()=>{
-        this.setState({innerComponent:<div>unmounted</div>})
-      },5000}
-    }
-  
-    render(){
-      console.log("Inside render method")
-      return(
-        <div>
-        {this.state.innerComponent}
-        </div>
-      )
-    }
+class App extends React.Component {
+  state = {
+    innerComponent: <AppInner />,
+    timerFinished: false // Add a flag to track whether the timer has finished
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        innerComponent: <div>Unmounted</div>,
+        timerFinished: true // Set the flag to true when the timer finishes
+      });
+    }, 5000);
+  }
+
+  render() {
+    console.log("Inside render method")
+    return (
+      <div>
+        {this.state.innerComponent}
+        {this.state.timerFinished && <h1>Timer Finished!</h1>} {/* Render h1 header if timerFinished is true */}
+      </div>
+    )
+  }
+}
+
+export default App;
 
 Puedes pasar datos de paderes a hijos usando propiedades, de hijos a padres usando callbacks y entre hermanos. 
