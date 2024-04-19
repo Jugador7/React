@@ -1,28 +1,16 @@
 Core building blocks of React
-
-A component is a part of every application you develop in React
-
-Hacen más sencilla la tarea de crear la intefaz del usuario
-
-Las piezas de la UI se pueden partir y mergear en un componente padre para formar la UI final. 
-
-Cada componente se puede usar y manejar independientemente. 
-
-La función principal de cada componente es reproducir la interfaz del usuario y actualizarla cada vez que su estado interno sea modificado. 
-
-Gestiona los eventos que le pertenecen a la interfaz del usuario. 
-
-El ESTADO es un objeto para describir el comportamiento del componente. El compoennte puede ser "stateful" o "stateless". 
-
-Un componente statefull se actualiza según el estado actual, es de tipo clase. 
-
-Los componentes stateless son de tipo función. 
-
-Tienen propiedades que permiten recibir datos. 
-
-Tienen eventos que le permiten al componente manejar eventos DOM y de interacción con el usuario. 
-
-Los estados le permiten al componente mantenerse stateful. 
+-A component is a part of every application you develop in React
+-Hacen más sencilla la tarea de crear la intefaz del usuario
+-Las piezas de la UI se pueden partir y mergear en un componente padre para formar la UI final. 
+-Cada componente se puede usar y manejar independientemente. 
+-La función principal de cada componente es reproducir la interfaz del usuario y actualizarla cada vez que su estado interno sea modificado. 
+-Gestiona los eventos que le pertenecen a la interfaz del usuario. 
+-El ESTADO es un objeto para describir el comportamiento del componente. El compoennte puede ser "stateful" o "stateless". 
+-Un componente statefull se actualiza según el estado actual, es de tipo clase. 
+-Los componentes stateless son de tipo función. 
+-Tienen propiedades que permiten recibir datos. 
+-Tienen eventos que le permiten al componente manejar eventos DOM y de interacción con el usuario. 
+-Los estados le permiten al componente mantenerse stateful. 
 
 En React los componentes son:
 - Funcionales (utiles cuando el componente tiene propiedades pero el ciclo de vida no debe ser gestionado)
@@ -34,27 +22,36 @@ En React los componentes son:
 
   Las propiedades son definidas por el usuario y se pasan como parametros en la función
 
-  function App(props){
-    const compStyle = {
-      color : props.color,
-      fontsize: props.size + "px"
-    };
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-    return {
-      <div>
-        <span style = {compStyle}> I am sentence </span>
-      </div>
-    };
-  }
+const Democomponent = () => {
+  return <h1> Welcome Message! </h1>;
+}
 
-  ReactDOM.render(
+function App(props) {
+  const compStyle = {
+    color: props.color,
+    fontSize: props.size + "px"
+  };
+
+  return (
+    <div>
+      <span style={compStyle}> I am sentence </span>
+    </div>
+  );
+}
+
+ReactDOM.render(
   <React.StrictMode>
-    <App color = "blue" size ="25" />
-  </ReactStrictMode>
+    <App color="blue" size="25" />
+  </React.StrictMode>,
   document.getElementById('root')
-  )
+);
 
-  EventHandler
+export default App;
+
+EventHandler
   - El más común esa el on Click
   
   
@@ -65,7 +62,8 @@ En React los componentes son:
   Pueden usar funciones de React como state, props y métodos de ciclo de vida. 
   Son stateful
 
-  class Democomponent extends React.Component {
+  class Dem
+    ocomponent extends React.Component {
     render(){
      return <h1> Welcome Message!</h1> 
     }
