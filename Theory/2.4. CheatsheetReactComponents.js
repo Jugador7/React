@@ -1,15 +1,25 @@
 //React state	The state object is where you keep the component's property values.	
-class TestComponentextendsReact.component{
-constructor() {
-this.state= {
-id: 1,
-name: “John”
-age: 28
-};}
-render() {
-return ({this.state.name}{this.state.age}
-)}}
 
+class TestComponent extends React.Component{
+
+constructor(props) {
+ super(props);
+ this.state= {
+   id: 1,
+   name: “John”,
+   age: 28
+ };
+}
+
+render() {
+  return (
+    <div>
+      <p>ID: {this.state.id}</p>
+      <p>Name: {this.state.name}</p>
+      <p>Age: {this.state.age}</p>
+    </div>
+  );
+}
 
 //Props	Props is short for properties and it is used to pass data between React components.	
 class TestComponentextendsReact.component{
