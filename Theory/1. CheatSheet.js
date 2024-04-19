@@ -71,10 +71,11 @@ class Square extends Rectangle
 }
 let mySquare = new Square(5,5)
 
-React components	Components are reusable segments of code that come under the class and functional component types.	
+React components	
+Components are reusable segments of code that come under the class and functional component types.	
 
 import React from 'react';
-import {Text} from 'react-native’;
+import {Text} from 'react-native';
 const Helloworld= ()=>
 {
     return
@@ -82,21 +83,27 @@ const Helloworld= ()=>
 }
 export default Helloworld;
 
-React class Component	React class component contains- Props: set from outside the class State: internal to the class	
+React class Component	
+React class component contains
+- Props: set from outside the class 
+- State: internal to the class	
+
 import React from "react";
 class App extends React.Component {
 constructor(props) {
 super(props);
-this.state={change: true };
+this.state={change: true};
 }
+    
 render() {
 return(
-<button Click={()=>{this.setState({change: !this.state.change});}}>Click Here!</button>
+<button onClick={()=>{this.setState({change:!this.state.change});}}>Click Here!</button>
 {this.state.change?(Hello!!):(Welcome to the React Course)}
 );}}
 export default App;
 
 onClick	When an event fires, event handlers decide what should happen next. This could involve pressing a button or altering a text entry.	
+
 function changeColor() {
 const shoot = () => {
     alert("Color Changed!");
