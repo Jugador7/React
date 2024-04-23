@@ -63,9 +63,3 @@
 //A pure function that receives the current state and an Action
 //Acts as an event listener, reads the action payloads, and updates Store
 //Takes two parameters, previous app state and action, returns a new app state
-
-
-
-
-
-
